@@ -1,3 +1,8 @@
+* {
+  font-family: 'Karla', sans-serif;
+  color: #495e57;
+}
+
 nav {
   display: flex;
   justify-content: center;
@@ -19,7 +24,6 @@ nav ul li a {
 nav ul li a,
 footer ul li a {
   text-decoration: none;
-  color: #495e57;
 }
 
 nav ul li a:hover,
@@ -27,16 +31,38 @@ footer ul li a:hover {
   text-decoration: underline;
 }
 
+.logo {
+  max-height: 5vh;
+}
+
+.specials,
+.testimonials,
+.about,
+footer {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-top: 5%;
+}
+
+.specials {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 
 footer {
   display: flex;
   justify-content: flex-start;
   gap: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
   background-color: #f4ce14;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 10%;
 }
 
 .footer-logo {
@@ -48,4 +74,263 @@ footer {
 footer ul {
   list-style-type: none;
   padding: 0;
+  min-width: 50%;
+  font-size: 16px;
+}
+
+.hero, 
+.specials-header, 
+.specials-list,
+.testimonials-list,
+.customer-details {
+  display: flex;
+}
+
+.specials-list,
+.testimonials-list {
+  overflow-x: auto;
+  gap: 30px;
+}
+
+.hero {
+  background-color: #495e57;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2% 5%;
+}
+
+.intro {
+  max-width: 60%;
+}
+
+.intro h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40pt;
+  margin: 0;
+}
+
+.intro h3 {
+  margin-top: 0;
+  font-size: 18pt;
+}
+
+.intro p {
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+button {
+  height: 5vh;
+  width: 15vw;
+  border-radius: 16pt;
+  background-color: black;
+  color: #FFFFFF;
+  border: none;
+}
+
+button:hover {
+  background-color: #f4ce14;
+  color: #000000;
+  cursor: pointer;
+}
+
+.hero div h3,
+.hero div p {
+  color: #FFFFFF;
+}
+
+.hero div h1 {
+  color: #f4ce14;
+}
+
+.customer-rating {
+  min-width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero img {
+  max-height: 25vh;
+  border-radius: 16pt;
+}
+
+.specials-header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.specials-header h3 {
+  font-size: 18pt;
+  margin: 0;
+}
+
+.special,
+.testimonial {
+  border: 1px solid #f4ce14;
+  border-radius: 16px;
+  padding-bottom: 10px;
+  min-width: 300px;
+}
+
+.special img {
+  max-width: 100%;
+  border-radius: 16px 16px 0 0;
+  border-bottom: 1px solid #f4ce14;
+}
+
+.special-description,
+.testimonial-details {
+  padding: 0 5% 5% 5%
+}
+
+.special-description a,
+.testimonial-details a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.special-description a:hover,
+.testimonial-details a:hover {
+  text-decoration: underline;
+}
+
+.specials-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.testimonial {
+  background-color: #495e57;
+}
+
+.customer-rating h4,
+.testimonial-details p,
+.testimonial-details a {
+  color: #FFFFFF;
+}
+
+.testimonial img {
+  max-width: 50%;
+  object-fit: contain;
+  border-radius: 16px 0;
+  border-bottom: 1px solid #f4ce14;
+  border-right: 1px solid #f4ce14;
+}
+
+.rating svg path {
+  color: #f4ce14
+}
+
+.about {
+  display: flex;
+  gap: 5%;
+}
+
+.about-details h1 {
+  font-size: 40pt;
+  margin: 0;
+}
+
+.about-details h3 {
+  font-size: 18pt;
+  margin: 0;
+}
+
+.about-details p {
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+.about-photos {
+  max-width: 50%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+
+.about-photos img {
+  max-width: 100%;
+  filter: drop-shadow(0px 0px 1px #000);
+}
+
+.about-photos img:first-of-type {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+  padding-top: 20%;
+  z-index: 1
+}
+
+.about-photos img:last-of-type {
+  grid-column: 2 / -1;
+  grid-row: 1;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.socials-links {
+  min-width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+@media (max-width : 750px) {
+  nav ul,
+  footer {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    justify-content: space-between;
+  }
+
+  .intro,
+  .about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .intro p,
+  .intro h1,
+  .intro h3,
+  .about h1,
+  .about h3,
+  .about p {
+    text-align: center;
+  }
+
+  button {
+    width: 30vw;
+  }
+
+  .special-title,
+  .special-price {
+    font-size: 18pt;
+    margin-top: 3pt;
+    font-weight: bold;
+  }
+  
 }
