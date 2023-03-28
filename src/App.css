@@ -119,16 +119,17 @@ footer ul {
   line-height: 1.5;
 }
 
-button {
+.button {
   height: 5vh;
   width: 15vw;
   border-radius: 16pt;
   background-color: black;
   color: #FFFFFF;
-  border: none;
+  text-align: center;
+  line-height: 5vh;
 }
 
-button:hover {
+.button:hover {
   background-color: #f4ce14;
   color: #000000;
   cursor: pointer;
@@ -171,13 +172,18 @@ button:hover {
   border: 1px solid #f4ce14;
   border-radius: 16px;
   padding-bottom: 10px;
-  min-width: 300px;
+  min-width: 200px;
 }
 
 .special img {
   max-width: 100%;
   border-radius: 16px 16px 0 0;
   border-bottom: 1px solid #f4ce14;
+}
+
+.special-price {
+  color: #f4ce14;
+  text-shadow: 0.5px 0.5px 1px #495e57;
 }
 
 .special-description,
@@ -190,6 +196,12 @@ button:hover {
   text-decoration: none;
   font-weight: bold;
 }
+
+.intro a,
+.specials a {
+  text-decoration: none;
+}
+
 
 .special-description a:hover,
 .testimonial-details a:hover {
@@ -280,6 +292,61 @@ button:hover {
   justify-content: space-between;
 }
 
+.booking-page {
+  display: flex;
+  justify-content: space-around;
+}
+
+.booking-page img {
+  max-width: 40vw;
+  max-height: 50vw;
+}
+
+.booking-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.booking-form-container h1,
+.coming-soon h1 {
+  font-family: 'Markazi Text', serif;
+  font-size: 40pt;
+}
+
+.booking-form {
+  padding: 10%;
+  min-width: 30vw;
+  border: 1px solid black;
+  border-radius: 16pt;
+  justify-items: center;
+}
+
+.booking-form label {
+  font-size: 16Zpt;
+  font-weight: bold;
+  text-align: center;
+}
+
+.booking-form input,
+.booking-form select {
+  min-height: 5vh;
+  text-align: center;
+  font-size: 12pt;
+  width: 90%;
+}
+
+.booking-form .button {
+  font-size: 10pt;
+  min-width: 70%;
+  border: none;
+}
+
+.coming-soon {
+  min-height: 40vh;
+  text-align: center;
+}
 
 
 
@@ -322,15 +389,13 @@ button:hover {
     text-align: center;
   }
 
-  button {
-    width: 30vw;
+  .button,
+  .booking-form .button {
+    width: 40vw;
   }
 
-  .special-title,
-  .special-price {
-    font-size: 18pt;
-    margin-top: 3pt;
-    font-weight: bold;
+  .booking-form-container {
+    min-width: 100vw;
   }
   
 }
