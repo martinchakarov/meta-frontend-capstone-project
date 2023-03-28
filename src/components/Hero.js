@@ -1,4 +1,4 @@
-import food from '../images/lemon.png';
+import food from '../images/assets/lemon.png';
 import {Link} from 'react-router-dom';
 
 export default function Hero() {

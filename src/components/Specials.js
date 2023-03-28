@@ -1,5 +1,6 @@
-import Card from './Special';
+import Special from './Special';
 import {Link} from 'react-router-dom';
+import {specials} from '../content/specials'
 
 export default function Specials() {
     return (
@@ -9,12 +10,11 @@ export default function Specials() {
                 <Link to="/order"><div className="button">Online Menu</div></Link>
             </div>
             <div className='specials-list'>
-                <Card />
-                <Card />
-                <Card />
-                <Card />
-                <Card />
+            {specials.map((dish) => (
+                <Special title={dish.title} price={dish.price} description={dish.description} photo={dish.photo}/>
+            ))}
             </div>
         </section>
     )
 }
+

@@ -9,11 +9,6 @@ export default function BookingForm(props) {
         "occasion": 'Birthday',
       });
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(bookingData);
-      };
-
     const handleInputChange = (event) => {
         const { id, value } = event.target;
         setBookingData((prevState) => ({
@@ -38,10 +33,14 @@ export default function BookingForm(props) {
           time: props.availableTimes.times.sort()[0]
         }))
       }
-    }, [props.availableTimes.times])
+    }, [props.availableTimes.times, bookingData.time])
+
+    useEffect(() => {
+      console.log(bookingData)
+    }, [bookingData])
 
     return (
-        <form className="booking-form" style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={handleSubmit}>
+        <form className="booking-form" style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={() =>props.submitForm(bookingData)}>
           <label htmlFor="date">Choose date</label>
           <input type="date" id="date" value={bookingData.date} onChange={handleDateChange}/>
           <label htmlFor="time">Choose time</label>

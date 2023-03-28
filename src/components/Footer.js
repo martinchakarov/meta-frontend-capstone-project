@@ -1,4 +1,4 @@
-import logo from '../images/logo-footer.png';
+import logo from '../images/assets/logo-footer.png';
 import {Link} from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {faFacebookSquare,faInstagram,faTwitterSquare,faTiktok} from "@fortawesome/free-brands-svg-icons";

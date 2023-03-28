@@ -1,26 +1,22 @@
 import {Link} from 'react-router-dom';
-import person1 from '../images/john-smith.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-export default function Testimonial() {
+
+export default function Testimonial(props) {
     return (
         <article className="testimonial">
             <div className="customer-details">
-                <img src={person1} alt="customer"/>
+                <img src={props.photo} alt="customer"/>
                 <div className="customer-rating">
-                    <h4>John Smith</h4>
+                    <h4>{props.name}</h4>
                     <div className="rating">
-                        <FontAwesomeIcon icon={faStar}/>
-                        <FontAwesomeIcon icon={faStar}/>
-                        <FontAwesomeIcon icon={faStar}/>
-                        <FontAwesomeIcon icon={faStar}/>
-                        <FontAwesomeIcon icon={faStar}/>
+                        {Array(props.rating).fill(<FontAwesomeIcon icon={faStar}/>)}
                     </div>
                 </div>
             </div>
             <div className="testimonial-details">
-                <p>Best place for healthy lunch in Chicago! Highly recommended!</p>
+                <p>{props.description}</p>
                 <Link to="#">See more</Link>
             </div>
         </article>
