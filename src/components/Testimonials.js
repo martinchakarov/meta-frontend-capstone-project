@@ -7,7 +7,7 @@ export default function Testimonials() {
             <h3>Testimonials</h3>
             <div className="testimonials-list">
                 {testimonials.map((customer) => (
-                    <Testimonial name={customer.name} rating={customer.rating} description={customer.description} photo={customer.photo}/>
+                    <Testimonial key={customer.name} name={customer.name} rating={customer.rating} description={customer.description} photo={customer.photo}/>
                 ))}
             </div>
         </section>

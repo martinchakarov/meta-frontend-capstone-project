@@ -9,6 +9,8 @@ export default function BookingForm(props) {
         "occasion": 'Birthday',
       });
 
+    const [inputValid, setInputValid] = useState(false);
+
     const handleInputChange = (event) => {
         const { id, value } = event.target;
         setBookingData((prevState) => ({
@@ -36,13 +38,17 @@ export default function BookingForm(props) {
     }, [props.availableTimes.times, bookingData.time])
 
     useEffect(() => {
-      console.log(bookingData)
+      if (bookingData.date && bookingData.time && new Date(`${bookingData.date} ${bookingData.time}`) >= new Date() && bookingData.guests > 0 && bookingData.guests <= 10) {
+        setInputValid(true);
+      } else {
+        setInputValid(false)
+      }
     }, [bookingData])
 
     return (
         <form className="booking-form" style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={() =>props.submitForm(bookingData)}>
           <label htmlFor="date">Choose date</label>
-          <input type="date" id="date" value={bookingData.date} onChange={handleDateChange}/>
+          <input type="date" id="date" value={bookingData.date} min={new Date().toISOString().split("T")[0]} onChange={handleDateChange}/>
           <label htmlFor="time">Choose time</label>
           <select id="time" value={bookingData.time} onChange={handleInputChange}>
             {props.availableTimes.times.map((time) => (
@@ -58,7 +64,10 @@ export default function BookingForm(props) {
               <option>Birthday</option>
               <option>Anniversary</option>
           </select>
-          <input className="button" type="submit" value="Make Your Reservation"/>
+          {inputValid ?
+              <input className="button" type="submit" value="Make Your Reservation"/>
+            : <input style={{backgroundColor: 'grey', color: 'black'}} className="button" type="submit" value="Make Your Reservation" disabled/>
+          }
         </form>
     )
 }

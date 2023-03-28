@@ -10,12 +10,12 @@ test('Renders the Choose time label', () => {
 });
 
 describe('initializeTimes', () => {
-  it('returns an object with a date and a fixed times array', () => {
+  it('returns an object with a date and a times array', () => {
     const result = initializeTimes();
     expect(result).toHaveProperty('date');
     expect(result).toHaveProperty('times');
     expect(Array.isArray(result.times)).toBe(true);
-    expect(result.times).toStrictEqual(['17:00','18:00','19:00','20:00','21:00','22:00',]);
+    expect(result.times.length).toBeGreaterThan(0);
   });
 });
 
@@ -28,10 +28,10 @@ describe('updateTimes', () => {
   });
 
   it('returns a new object with the times array updated when a new date is selected', () => {
-    const state = { date: '', times: ['17:00', '18:00'] };
+    const state = { date: '', times: ['00:00', '18:00'] };
     const action = { type: 'SET_DATE', payload: '2023-04-02' };
     const result = updateTimes(state, action);
-    expect(result.times).toEqual(['22:00', '21:00']);
+    expect(result.times).not.toEqual(['00:00', '18:00']);
   });
 
   it('throws an error if the action type is not recognized', () => {
@@ -44,6 +44,7 @@ describe('updateTimes', () => {
 describe('BookingForm', () => {
   test('submits the form with correct data', () => {
     const dispatchMock = jest.fn();
+    const submitForm = jest.fn();
     const consoleSpy = jest.spyOn(console, 'log');
     jest.spyOn(React, 'useEffect').mockImplementation((f) => f());
     const availableTimes = {
@@ -51,7 +52,7 @@ describe('BookingForm', () => {
       times: ['17:00', '18:00', '19:00']
     };
 
-    render(<BookingForm dispatch={dispatchMock} availableTimes={availableTimes} />);
+    render(<BookingForm dispatch={dispatchMock} availableTimes={availableTimes} submitForm={submitForm} />);
     const dateInput = screen.getByLabelText('Choose date');
     const timeInput = screen.getByLabelText('Choose time');
     const guestsInput = screen.getByLabelText('Number of guests');

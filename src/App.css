@@ -92,6 +92,11 @@ footer ul {
   gap: 30px;
 }
 
+.testimonials-list,
+.specials-list {
+  justify-content: space-between;
+}
+
 .hero {
   background-color: #495e57;
   justify-content: space-around;
@@ -160,6 +165,7 @@ footer ul {
 .specials-header {
   justify-content: space-between;
   align-items: center;
+  width: 90vw;
 }
 
 .specials-header h3,
@@ -177,14 +183,15 @@ footer ul {
   border: 1px solid #f4ce14;
   border-radius: 16px;
   padding-bottom: 10px;
-  min-width: 200px;
+  width: 15vw;
 }
 
 .special img {
-  max-width: 100%;
-  min-height: 30vh;
+  width: 15vw;
+  height: 20vh;
   border-radius: 16px 16px 0 0;
   border-bottom: 1px solid #f4ce14;
+  
 }
 
 .special-price {
@@ -192,11 +199,23 @@ footer ul {
   text-shadow: 0.5px 0.5px 1px #495e57;
 }
 
+.special-price,
+.special-title {
+  margin: 0;
+}
+
+.special-description {
+  height: 30vh;
+}
+
+.testimonial-details {
+  height: 25vh;
+}
+
 .testimonial-details,
 .special-description {
   display: flex;
   flex-direction: column;
-  min-height: 60%;
   justify-content: space-between;
 }
 
@@ -368,6 +387,7 @@ footer ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 50vh;
 }
 
 .confirmation h1 {
@@ -439,6 +459,18 @@ footer ul {
 
   .booking-form-container {
     min-width: 100vw;
+  }
+
+  .special img {
+    max-width: 100%;
+    min-height: 20vh;
+
+  }
+
+  .special,
+  .special img,
+  .testimonial {
+    min-width: 60vw;
   }
   
 }

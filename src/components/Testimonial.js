@@ -11,7 +11,7 @@ export default function Testimonial(props) {
                 <div className="customer-rating">
                     <h4>{props.name}</h4>
                     <div className="rating">
-                        {Array(props.rating).fill(<FontAwesomeIcon icon={faStar}/>)}
+                        {Array.from({length:props.rating}, (_, i) => <FontAwesomeIcon key={i} icon={faStar}/>)}
                     </div>
                 </div>
             </div>

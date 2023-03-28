@@ -11,7 +11,7 @@ export default function Specials() {
             </div>
             <div className='specials-list'>
             {specials.map((dish) => (
-                <Special title={dish.title} price={dish.price} description={dish.description} photo={dish.photo}/>
+                <Special key={dish.title} title={dish.title} price={dish.price} description={dish.description} photo={dish.photo}/>
             ))}
             </div>
         </section>
