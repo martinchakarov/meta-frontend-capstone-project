@@ -38,7 +38,13 @@ export default function BookingForm(props) {
     }, [props.availableTimes.times, bookingData.time])
 
     useEffect(() => {
-      if (bookingData.date && bookingData.time && new Date(`${bookingData.date} ${bookingData.time}`) >= new Date() && bookingData.guests > 0 && bookingData.guests <= 10) {
+      if (
+        bookingData.date 
+        && bookingData.time 
+        && new Date(`${bookingData.date} ${bookingData.time}`) >= new Date() 
+        && bookingData.guests > 0 && bookingData.guests <= 10
+        && ['Anniversary', 'Birthday'].includes(bookingData.occasion)
+        ) {
         setInputValid(true);
       } else {
         setInputValid(false)
@@ -48,7 +54,7 @@ export default function BookingForm(props) {
     return (
         <form className="booking-form" style={{display: 'grid', maxWidth: '200px', gap: '20px'}} onSubmit={() =>props.submitForm(bookingData)}>
           <label htmlFor="date">Choose date</label>
-          <input type="date" id="date" value={bookingData.date} min={new Date().toISOString().split("T")[0]} onChange={handleDateChange}/>
+          <input aria-label="On Click" type="date" id="date" value={bookingData.date} min={new Date().toISOString().split("T")[0]} onChange={handleDateChange}/>
           <label htmlFor="time">Choose time</label>
           <select id="time" value={bookingData.time} onChange={handleInputChange}>
             {props.availableTimes.times.map((time) => (
@@ -58,15 +64,15 @@ export default function BookingForm(props) {
             ))}
           </select>
           <label htmlFor="guests">Number of guests</label>
-          <input type="number" placeholder="1" min="1" max="10" id="guests" value={bookingData.guests} onChange={handleInputChange}/>
+          <input aria-label="On Click" type="number" placeholder="1" min="1" max="10" id="guests" value={bookingData.guests} onChange={handleInputChange}/>
           <label htmlFor="occasion">Occasion</label>
           <select id="occasion" value={bookingData.occasion} onChange={handleInputChange}>
               <option>Birthday</option>
               <option>Anniversary</option>
           </select>
           {inputValid ?
-              <input className="button" type="submit" value="Make Your Reservation"/>
-            : <input style={{backgroundColor: 'grey', color: 'black'}} className="button" type="submit" value="Make Your Reservation" disabled/>
+              <input aria-label="On Click" className="button" type="submit" value="Make Your Reservation"/>
+            : <input aria-label="On Click" style={{backgroundColor: 'grey', color: 'black'}} className="button" type="submit" value="Make Your Reservation" disabled/>
           }
         </form>
     )
