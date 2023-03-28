@@ -71,8 +71,8 @@ export default function BookingForm(props) {
               <option>Anniversary</option>
           </select>
           {inputValid ?
-              <input aria-label="On Click" className="button" type="submit" value="Make Your Reservation"/>
-            : <input aria-label="On Click" style={{backgroundColor: 'grey', color: 'black'}} className="button" type="submit" value="Make Your Reservation" disabled/>
+              <input className="button" type="submit" value="Make Your Reservation"/>
+            : <input style={{backgroundColor: 'grey', color: 'black'}} className="button" type="submit" value="Make Your Reservation" disabled/>
           }
         </form>
     )
