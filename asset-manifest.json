@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/meta-frontend-capstone-project/static/css/main.d0ab507c.css",
+    "main.js": "/meta-frontend-capstone-project/static/js/main.59065f81.js",
+    "static/js/787.99ffa8e0.chunk.js": "/meta-frontend-capstone-project/static/js/787.99ffa8e0.chunk.js",
+    "static/media/about1.jpg": "/meta-frontend-capstone-project/static/media/about1.7f44c6d6e341a27d14b3.jpg",
+    "static/media/about2.jpg": "/meta-frontend-capstone-project/static/media/about2.6ba0e06bfa9c1ea75109.jpg",
+    "static/media/dish1.jpg": "/meta-frontend-capstone-project/static/media/dish1.bed423a1fab5b210e347.jpg",
+    "static/media/dish4.jpg": "/meta-frontend-capstone-project/static/media/dish4.a9c9664c434161ebe63e.jpg",
+    "static/media/dish2.jpg": "/meta-frontend-capstone-project/static/media/dish2.c0151a12868a248c8a75.jpg",
+    "static/media/dish3.jpg": "/meta-frontend-capstone-project/static/media/dish3.ed1d0d48d99dd3257ceb.jpg",
+    "static/media/dish5.jpg": "/meta-frontend-capstone-project/static/media/dish5.719e803b7caad026ce3d.jpg",
+    "static/media/logo-footer.png": "/meta-frontend-capstone-project/static/media/logo-footer.215df87837073a73cb27.png",
+    "static/media/person1.jpg": "/meta-frontend-capstone-project/static/media/person1.3b1b7e45910a68849aa0.jpg",
+    "static/media/person5.jpg": "/meta-frontend-capstone-project/static/media/person5.820a0ea2cfc792ec7b47.jpg",
+    "static/media/person4.jpg": "/meta-frontend-capstone-project/static/media/person4.7354de386c889610214e.jpg",
+    "static/media/person2.jpg": "/meta-frontend-capstone-project/static/media/person2.ae5f4defa4582a5859a6.jpg",
+    "static/media/person3.jpg": "/meta-frontend-capstone-project/static/media/person3.0ee9c8000477f402ded5.jpg",
+    "static/media/lemon.png": "/meta-frontend-capstone-project/static/media/lemon.b8445110e4e49b6b30a0.png",
+    "static/media/logo.png": "/meta-frontend-capstone-project/static/media/logo.11e33a59dcd274f9a05b.png",
+    "index.html": "/meta-frontend-capstone-project/index.html",
+    "main.d0ab507c.css.map": "/meta-frontend-capstone-project/static/css/main.d0ab507c.css.map",
+    "main.59065f81.js.map": "/meta-frontend-capstone-project/static/js/main.59065f81.js.map",
+    "787.99ffa8e0.chunk.js.map": "/meta-frontend-capstone-project/static/js/787.99ffa8e0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d0ab507c.css",
+    "static/js/main.59065f81.js"
+  ]
+}
